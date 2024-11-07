@@ -1,0 +1,151 @@
+{
+    "users": [
+      {
+        "id": "user1",
+        "name": "John Doe",
+        "email": "john@example.com",
+        "role": "admin",
+        "joinedDate": "2023-06-15"
+      },
+      {
+        "id": "user2",
+        "name": "Jane Smith",
+        "email": "jane@example.com",
+        "role": "user",
+        "joinedDate": "2023-08-10"
+      },
+      {
+        "id": "user3",
+        "name": "Alice Brown",
+        "email": "alice@example.com",
+        "role": "user",
+        "joinedDate": "2023-09-05"
+      }
+    ],
+    "vehicles": [
+      {
+        "id": "car1",
+        "type": "car",
+        "name": "Toyota Corolla",
+        "image": "../assets/Vehicle/Toyota-Corolla.webp",
+        "model": "2020",
+        "rentPerDay": 50,
+        "available": true
+      },
+      {
+        "id": "car2",
+        "type": "car",
+        "name": "Honda Civic",
+        "image": "../assets/Vehicle/civic.webp",
+        "model": "2021",
+        "rentPerDay": 60,
+        "available": false
+      },
+      {
+        "id": "bike1",
+        "type": "bike",
+        "name": "Harley Davidson",
+        "image": "../assets/Vehicle/harley.webp",
+        "model": "2019",
+        "rentPerDay": 40,
+        "available": true
+      },
+      {
+        "id": "bike2",
+        "type": "bike",
+        "name": "Yamaha MT-15",
+        "image": "../assets/Vehicle/yamahaMT.webp",
+        "model": "2021",
+        "rentPerDay": 30,
+        "available": true
+      }
+    ],
+    "bookings": [
+      {
+        "id": "booking1",
+        "userId": "user2",
+        "vehicleId": "car1",
+        "bookingDate": "2023-10-01",
+        "returnDate": "2023-10-03",
+        "status": "completed",
+        "totalAmount": 100
+      },
+      {
+        "id": "booking2",
+        "userId": "user3",
+        "vehicleId": "bike2",
+        "bookingDate": "2023-11-01",
+        "returnDate": "2023-11-05",
+        "status": "active",
+        "totalAmount": 120
+      },
+      {
+        "id": "booking3",
+        "userId": "user3",
+        "vehicleId": "car2",
+        "bookingDate": "2023-11-10",
+        "returnDate": "2023-11-15",
+        "status": "cancelled",
+        "totalAmount": 0
+      }
+    ],
+    "statistics": {
+      "totalVehicles": 4,
+      "totalBookings": 3,
+      "completedBookings": 1,
+      "activeBookings": 1,
+      "cancelledBookings": 1,
+      "totalRevenue": 220
+    },
+    "revenuePerMonth": [
+      {
+        "month": "January",
+        "revenue": 1200
+      },
+      {
+        "month": "February",
+        "revenue": 900
+      },
+      {
+        "month": "March",
+        "revenue": 1500
+      },
+      {
+        "month": "April",
+        "revenue": 1100
+      },
+      {
+        "month": "May",
+        "revenue": 1700
+      },
+      {
+        "month": "June",
+        "revenue": 1300
+      },
+      {
+        "month": "July",
+        "revenue": 1600
+      },
+      {
+        "month": "August",
+        "revenue": 1400
+      },
+      {
+        "month": "September",
+        "revenue": 1550
+      },
+      {
+        "month": "October",
+        "revenue": 1700
+      },
+      {
+        "month": "November",
+        "revenue": 2000
+      },
+      {
+        "month": "December",
+        "revenue": 1800
+      }
+    ]
+  }
+  

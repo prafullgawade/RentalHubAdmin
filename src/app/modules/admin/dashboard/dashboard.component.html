@@ -1,0 +1,146 @@
+<h1 class="display-5">Dashboard</h1>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="card border-primary mb-3 mx-2" style="max-width: 10rem;">
+      <div class="card-header">Total Vehicles</div>
+      <div class="card-body text-primary">
+        <h5 class="card-title">{{ statistics.totalVehicles }}</h5>
+      </div>
+    </div>
+    <div class="card border-secondary mb-3 mx-2" style="max-width: 10rem;">
+      <div class="card-header">Total Bookings</div>
+      <div class="card-body text-secondary">
+        <h5 class="card-title">{{ statistics.totalBookings }}</h5>
+      </div>
+    </div>
+    <div class="card border-success mb-3 mx-2" style="max-width: 10rem;">
+      <div class="card-header">Completed Bookings</div>
+      <div class="card-body text-success">
+        <h5 class="card-title">{{ statistics.completedBookings }}</h5>
+      </div>
+    </div>
+    <div class="card border-danger mb-3 mx-2" style="max-width: 10rem;">
+      <div class="card-header">Active Bookings</div>
+      <div class="card-body text-danger">
+        <h5 class="card-title">{{ statistics.activeBookings }}</h5>
+      </div>
+    </div>
+    <div class="card border-warning mb-3 mx-2" style="max-width: 10rem;">
+      <div class="card-header">Cancelled Bookings</div>
+      <div class="card-body">
+        <h5 class="card-title">{{ statistics.cancelledBookings }}</h5>
+      </div>
+    </div>
+    <div class="card border-info mb-3 mx-2" style="max-width: 10rem;">
+      <div class="card-header">Total Revenue</div>
+      <div class="card-body">
+        <h5 class="card-title">{{ statistics.totalRevenue | currency }}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Vehicles List -->
+<div class="vehicles">
+  <div class="container mt-5">
+    <div class="row justify-content-center">  
+  <h3>Vehicles</h3>
+  <div class="row row-cols-1 row-cols-md-5 g-4">
+    <div class="col" *ngFor="let vehicle of vehicles">
+      <div class="card">
+        <img [src]="vehicle.image" class="card-img-top" alt="Vehicle image">
+        <div class="card-body">
+          <h5 class="card-title">{{ vehicle.name }} ({{ vehicle.type }})</h5>
+          <p class="card-text">
+            Rent per day: {{ vehicle.rentPerDay | currency }}<br>
+            <span *ngIf="vehicle.available" class="text-success">Available</span>
+            <span *ngIf="!vehicle.available" class="text-danger">Not Available</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+<!-- Users List -->
+<div class="users">  
+  <div class="container mt-5">
+    <h3>Users</h3>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col" *ngFor="let user of users">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">{{ user.name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ user.role }}</h6>
+            <p class="card-text">
+              <strong>Joined on:</strong> {{ user.joinedDate }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+
+<!-- Bookings List -->
+<div class="bookings">  
+  <div class="container mt-5">
+    <h3>Bookings</h3>
+    <div class="row">
+      <div class="col-md-10">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Booking ID</th>
+        <th scope="col">User ID</th>
+        <th scope="col">Vehicle ID</th>
+        <th scope="col">Booking Date</th>
+        <th scope="col">Return Date</th>
+        <th scope="col">Status</th>
+        <th scope="col">Total Amount</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let booking of bookings">
+        <td>{{ booking.id }}</td>
+        <td>{{ booking.userId }}</td>
+        <td>{{ booking.vehicleId }}</td>
+        <td>{{ booking.bookingDate }}</td>
+        <td>{{ booking.returnDate }}</td>
+        <td>{{ booking.status }}</td>
+        <td>{{ booking.totalAmount | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+      </div>
+      </div>
+  </div>
+</div>
+
+<!-- Revenue Per Month -->
+<div class="revenue"> 
+  <div class="container mt-5">
+    <h3>Revenue Per Month</h3>
+    <div class="row">
+      <div class="col-md-4"> <!-- Adjust the width with Bootstrap columns -->
+        <table class="table table-sm table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Month</th>
+              <th scope="col">Revenue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let revenue of revenuePerMonth">
+              <td>{{ revenue.month }}</td>
+              <td>{{ revenue.revenue | currency }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>  
+</div>

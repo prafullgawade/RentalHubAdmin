@@ -1,0 +1,19 @@
+<!-- src/app/modules/shared/components/sidebar/sidebar.component.html -->
+<!-- <div class="sidebar" [class.open]="isOpen">
+    <ul>
+      <li *ngFor="let item of menuItems">
+        <a [routerLink]="item.path">{{ item.label }}</a>
+      </li>
+    </ul>
+  </div> -->
+
+  <div class="sidebar" [class.open]="isOpen">
+    <button class="close-btn" (click)="toggleSidebar()">×</button> <!-- Close button -->
+    <ul>
+      <li *ngFor="let item of menuItems">
+        <a [routerLink]="item.path">{{ item.label }}</a>
+      </li>
+    </ul>
+  </div>
+  
+  

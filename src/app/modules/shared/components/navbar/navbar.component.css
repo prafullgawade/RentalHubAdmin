@@ -1,0 +1,93 @@
+/* Basic Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar-logo .app-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-logo .tagline {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.navbar-user {
+  font-size: 1rem;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links i {
+  margin-right: 5px;
+}
+
+/* Button for toggling sidebar */
+.toggle-sidebar {
+  display:contents;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-logo {
+    margin-bottom: 10px;
+  }
+
+  .navbar-user {
+    margin-bottom: 10px;
+  }
+
+  .navbar-links {
+    margin-top: 10px;
+    display: none; /* Hidden by default */
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .navbar-links a {
+    padding: 10px;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .toggle-sidebar {
+    display: block;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+/* Show navbar links when toggle-sidebar button is clicked */
+@media (max-width: 768px) {
+  .navbar.active .navbar-links {
+    display: flex;
+  }
+}

@@ -1,0 +1,21 @@
+  <nav class="navbar">
+    <button class="toggle-sidebar" (click)="toggleSidebar()">
+      ☰
+    </button>
+  
+    <div class="navbar-logo">
+      <img src="assets/logo1-removebg-preview.png" alt="REVUP Logo" />
+      <span class="app-name">REVUP</span>
+      <sub class="tagline">Your Journey, Your Ride</sub>
+    </div>
+  
+    <div class="navbar-user">
+      <span>{{ user.name }} ({{ user.role }})</span>
+    </div>
+  
+    <div class="navbar-links">
+      <i class="fas fa-sign-out-alt"></i>
+      <a (click)="logout()">Logout</a>
+    </div>
+  </nav>
+  
